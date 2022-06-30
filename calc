@@ -1,0 +1,374 @@
+#include <stdio.h>
+#include<math.h>
+# define PI 3.14 
+int scalc() {
+    int m ;
+    printf("Enter 1 for addition\n");
+    printf("Enter 2 for subtraction\n");
+    printf("Enter 3 for multiplication\n");
+    printf("Enter 4 for division\n");
+    printf("Enter 5 for remainder\n");
+    printf("Enter 6 for logarithm\n");
+    printf("Enter 7 for sine value\n");
+    printf("Enter 8 for cosine value\n");
+    printf("Enter 9 for tan value\n");
+    printf("Enter 10 for sin inverse value\n");
+    printf("Enter 11 for cos inverse value\n");
+    printf("Enter 12 for tan inverse value\n");
+    printf("Enter the value for m : ");
+    scanf("%d",&m);
+    if(m==1){
+        int a,b ;
+        printf("Enter the values of a and b : " );
+        scanf("%d %d",&a , &b);
+        printf("Sum of the numbers is : %d",a+b);}
+    else if(m==2){
+         int a,b ;
+         printf("Enter the values of a and b : " );
+         scanf("%d %d",&a , &b);
+         printf("subtraction of the numbers is : %d",a-b);}
+    else if(m==3){
+         int a,b ;
+         printf("Enter the values of a and b : " );
+         scanf("%d %d",&a , &b);
+         printf("Multiplication of the numbers : %d",a*b); }
+    else if(m==4){
+         int a,b ;
+         printf("Enter the values of a and b : " );
+         scanf("%d %d",&a , &b);
+         printf("Division of the given numbers :  %d",a/b); }
+    else if (m==5){
+         int a,b ;
+         printf("Enter the values of a and b : " );
+         scanf("%d %d",&a , &b);
+        printf("Remainder of the given numbers : %d",a%b);  }
+    else if(m==6){
+        double x,l ;
+        printf("Enter the value for x : ");
+        scanf("%lf",&x);
+        l = log(x);
+        printf("log(%lf) : %lf",x,l); }
+     else if (m==7){
+       double x,l,y ;
+       printf("Enter the value of x : ");
+       scanf("%lf",&x);
+       y = x*(PI/180);
+       l = sin(y);
+       printf("sin(%.3lf) : %lf", x,l);}
+    else if (m==8){
+        double x,l,y ;
+        printf("Enter the value of x : ");
+        scanf("%lf",&x);
+        y = x*(PI/180);
+        l = cos(y);
+        printf("cos(%.3lf) : %lf",x,l); }
+    else if(m==9){
+         double x,l,y ;
+         printf("Enter the value of x : ");
+         scanf("%lf",&x);
+         y = x*(PI/180);
+         l = tan(y);
+         printf("tan(%.3lf) : %lf", x,l);}
+    else if(m==10){
+         double x,l,y ;
+         printf("Enter the value of x : ");
+         scanf("%lf",&x);
+         y = x*(PI/180);
+         l = asin(y);
+         printf("asin(%.3lf) : %lf", x,l);}
+    else if(m==11){
+        double x,l,y ;
+        printf("Enter the value of x : ");
+        scanf("%lf",&x);
+        y = x*(PI/180);
+        l = acos(y);
+        printf("acos(%.3lf) : %lf", x,l);}
+     else if(m==12){
+        double x,l,y ;
+        printf("Enter the value of x : ");
+        scanf("%lf",&x);
+        y = x*(PI/180);
+        l = atan(y);
+         printf("atan(%.3lf) : %lf", x,l);}
+     else {
+         printf("Inavalid Input");}
+   return 0;}  
+   
+   
+   
+   
+   
+   
+   int mop() {
+    int opt;
+    
+    printf("1.Enter 1 if you want to add two matrices\n2.Enter 2 if you want to subtract two matrices\n3.Enter 3 if you want to get a transpose of a matrix\n4.Any other input would be considered invalid\n");
+    printf("Input the operation that you want to perform on the matrix : ");
+    scanf("%d",&opt);
+    if(opt==1){
+         int r,c;
+    printf("Enter the number of rows:");
+    scanf( "%d",&r);
+    printf("Enter the number of coloumns:");
+    scanf(" %d",&c);
+    int a[r][c];
+    int a2[r][c];
+    int s[r][c];
+    printf("Enter the first matrix");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        scanf("%d",&a[i][j]);
+         }
+   }
+    printf("Enter the second matrix:");
+    for(int i=0;i<r;i++){
+       for(int j=0;j<r;j++){
+          scanf("%d",&a2[i][j]);  
+        }
+     }
+
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        s[i][j]=a[i][j]+a2[i][j];
+        }
+    }
+    printf("the resulting matrix is \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+         printf("%d\t",s[i][j]);  
+           }
+        printf("\n");
+    }
+    }
+    else if(opt==2){
+           int r,c;
+    printf("Enter the number of rows:");
+    scanf( "%d",&r);
+    printf("Enter the number of coloumns:");
+    scanf(" %d",&c);
+    int a[r][c];
+    int a2[r][c];
+    int s[r][c];
+    printf("Enter the first matrix");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+            scanf("%d",&a[i][j]);
+     }
+    }
+    printf("Enter the second matrix:");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        scanf("%d",&a2[i][j]);  
+        }
+    }
+
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        s[i][j]=a[i][j]-a2[i][j];
+        }
+    }
+    printf("the resulting matrix is \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        printf("%d\t",s[i][j]);  
+        }
+        printf("\n");
+    }
+    }
+    else if(opt==3){
+        int r,c;
+        printf("Enter the number of rows:");
+        scanf( "%d",&r);
+        printf("Enter the number of coloumns:");
+        scanf(" %d",&c);
+        int a[r][c];
+        int t[r][c];
+        int temp;
+        printf("Enter the matrix");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+            scanf("%d",&a[i][j]);
+        }
+    }   
+    printf("the given matrix is \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        printf("%d\t",a[i][j]);  
+        }
+        printf("\n");
+    }
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        t[i][j]=a[j][i];
+        }
+    }
+    printf("the transpose of the given matrix is \n");
+    for(int i=0;i<r;i++){
+        for(int j=0;j<r;j++){
+        printf("%d\t",t[i][j]);  
+        }
+        printf("\n");
+    }
+    }
+    else{
+        printf("invalid input");
+    }
+    
+    
+    return 0;
+}
+
+
+
+
+
+
+ int conv() 
+{
+  int category;
+  int tempChoice;
+  int currencyChoice;
+  int massChoice;
+  
+  int userinputF; 
+  int userinputK;
+  
+  int userinputEurotoINR; 
+  int userinputUSDtoINR; 
+  int userinputRMBtoINR; 
+  int userinputPoundtoINR; 
+  int userinputAUDtoINR; 
+  
+  int userinputOunce; 
+  int userinputPounds; 
+  
+  float fahrenheitToCelsius; 
+  float kelvinToCelsius; 
+  
+  float EUROtoINR ; 
+  float USDtoINR; 
+  float RMBtoINR; 
+  float PoundtoINR ; 
+  float AUDtoINR ; 
+  
+  float ounceToGrams; 
+  float poundsToGrams; 
+  
+  printf("Welcome to Unit Converter! \n");
+  printf("Here is a list of conversation to choose from: \n");
+  printf("Temperature(1),Currency(2),Mass(3) \n");
+  printf("Please enter the letter you want to convert.\n");
+  scanf("%d",&category);
+  
+  if(category == 1)
+  {
+      printf("Welcome to Temperature Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for Fahrenheit to Celsius. \n");
+      printf("Enter 2 for Kelvin to Celsius. \n");
+      scanf("%d",&tempChoice);
+      if(tempChoice == 1)
+      {
+          printf("Please enter the Fahrenheit degree: \n");
+          scanf("%d",&userinputF);
+          fahrenheitToCelsius =  ((userinputF-32) * (5.0/9.0));
+          printf("Celsius: %f",fahrenheitToCelsius);
+      }
+      if(tempChoice == 2)
+      {
+        printf("Please enter the Kelvin degree: \n");
+        scanf("%d",&userinputK);
+        kelvinToCelsius = userinputK-273.15;
+        printf("Celsius: %f",kelvinToCelsius);
+      }
+      
+  }
+
+  if(category == 2) 
+  {
+      printf("Welcome to Currency Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for Euro to INR. \n");
+      printf("Enter 2 for USD to INR. \n");
+      printf("Enter 3 for RMB to INR \n");
+      printf("Enter 4 for Pound to INR \n");
+      printf("Enter 5 for AUD to INR \n");
+      scanf("%d",&currencyChoice);
+      if(currencyChoice == 1)
+      {
+          printf("Please enter the Euro amount: \n");
+          scanf("%d",&userinputEurotoINR);
+          EUROtoINR = userinputEurotoINR * 82.79;
+          printf("INR: %.2f",EUROtoINR); 
+      }
+      if(currencyChoice == 2)
+      {
+          printf("Please enter the USD amount: \n");
+          scanf("%d",&userinputUSDtoINR);
+          USDtoINR = userinputUSDtoINR * 77.84;
+          printf("INR: %.2f",USDtoINR);
+      }
+      if(currencyChoice == 3)
+      {
+        printf("Please enter the RMB amount: \n");
+        scanf("%d",&userinputRMBtoINR);
+        RMBtoINR = userinputRMBtoINR * 11.64;
+        printf("INR: %.2f",RMBtoINR);
+      }
+      if(currencyChoice == 4) 
+      {
+        printf("Please enter the pound amount: \n");
+        scanf("%d",&userinputPoundtoINR);
+        PoundtoINR = userinputPoundtoINR * 97.17;
+        printf("INR: %.2f",PoundtoINR);
+      }
+      if(currencyChoice == 5)
+      {
+        printf("Please enter the AUD amount: \n");
+        scanf("%d",&userinputAUDtoINR);
+        AUDtoINR = userinputAUDtoINR * 55.38;
+        printf("INR: %.2f",AUDtoINR);
+      }
+
+   }
+
+  if(category == 3)
+  {
+      printf("Welcome to Mass Converter! \n");
+      printf("Here is a list of conversations to choose from: \n");
+      printf("Enter 1 for ounces to grams. \n");
+      printf("Enter 2 for pounds to grams. \n");
+      scanf("%d",&massChoice);
+      if(massChoice == 1)
+      {
+          printf("Please enter the ounce amount: \n");
+          scanf("%d",&userinputOunce);
+          ounceToGrams = userinputOunce * 28.3495;
+          printf("Grams: %.2f",ounceToGrams);
+      }
+      if(massChoice == 2) 
+      {
+          printf("Please enter the pounds amount: \n");
+          scanf("%d",&userinputPounds);
+          poundsToGrams = userinputPounds * 453.592 ;
+          printf("Grams: %.2f",poundsToGrams);
+      }
+  }
+  return 0;
+}
+
+
+int main() {
+    int option ;
+printf("1.For unit converter press 1\n2.For calculator press 2\n3.For matrix calculator press 3\n4.Any other input would be considered invalid\nEnter the operation you want to perform:");
+    scanf("%d",&option);
+    if(option ==1){
+                conv();}
+    else if(option==2){
+               scalc();  }
+    else if (option==3){
+                mop();}
+    else{
+         printf("Invalid Input");}
+    return 0;
+}
